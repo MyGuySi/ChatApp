@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { Text, View, StyleSheet } from 'react-native';
 
-const Message = ({ username, text, alignRight }) =>
-  <View style={[styles.container, alignRight ? { alignItems: "flex-end" } : null]}>
-    <Text style={styles.usernameLabel}>from {username}</Text>
+const Message = ({ username, text, received }) =>
+  <View style={[styles.container, received ? null : { alignItems: "flex-end" }]}>
+    <Text style={styles.usernameLabel}>
+      {received ? `from ${username}:` : "You:"}
+    </Text>
     <Text style={styles.textLabel}>{text}</Text>
   </View>
 

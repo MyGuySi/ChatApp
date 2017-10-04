@@ -6,7 +6,7 @@ import Message from "./Message";
 class MessageList extends Component {
   renderMessages() {
     return this.props.messages.map((message, i) =>
-      <Message {...message} alignRight={message.username !== this.props.username} key={i} />
+      <Message {...message} received={message.username !== this.props.username} key={i} />
     )
   }
 
